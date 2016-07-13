@@ -24,9 +24,18 @@ ruleTester.run("obsolete-dependencies", rule, {
         "define(function() {});",
         "define(['a'], function() {});",
         "define('id', ['a'], function() {});",
+        { code: "define(['A'], function() { });", options: [{ 'a': 'do not use' }, true] }
     ],
 
     invalid: [
+        {
+            code: "define(['A'], function() { });",
+            options: [{ 'a': 'do not use' }],
+            errors: [{
+                message: "'a': do not use",
+                type: "Literal"
+            }]
+        },
         {
             code: "define(['a'], function() { });",
             options: [{ 'a': 'do not use' }],

@@ -24,6 +24,10 @@ ruleTester.run("no-unused-dependencies", rule, {
         "define(function() { });",
         "define(['a'], function(a) { console.log(a); });",
         "define('id', ['a'], function(a) { console.log(a); });",
+        {
+            code: "define(['a'], function(A) { return <A/>; })",
+            parserOptions: { "ecmaFeatures": { "jsx": true } }
+        }
     ],
 
     invalid: [

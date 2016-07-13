@@ -27,9 +27,12 @@ ruleTester.run("no-unused-dependencies", rule, {
         {
             code: "define(['a'], function(A) { return <A/>; })",
             parserOptions: { "ecmaFeatures": { "jsx": true } }
+        },
+        {
+            code: "define(['react'], function(React) { const Div = () => <div />; })",
+            parserOptions: { ecmaVersion: 6, ecmaFeatures: { jsx: true } }
         }
     ],
-
     invalid: [
         {
             code: "define(['a'], function(a) { });",

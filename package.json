@@ -1,0 +1,27 @@
+{
+  "name": "eslint-plugin-amd",
+  "version": "0.0.0",
+  "description": "amd",
+  "keywords": [
+    "amd",
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "dependencies": {
+    "requireindex": "~1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "~2.6.0",
+    "mocha": "^2.5.3"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "license": "ISC"
+}

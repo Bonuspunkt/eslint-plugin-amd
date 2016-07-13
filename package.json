@@ -8,7 +8,7 @@
     "eslintplugin",
     "eslint-plugin"
   ],
-  "author": "",
+  "author": "bonuspunkt",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha tests --recursive"

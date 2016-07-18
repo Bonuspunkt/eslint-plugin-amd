@@ -21,6 +21,7 @@ var ruleTester = new RuleTester();
 ruleTester.run("sane-dependency-names", rule, {
 
     valid: [
+        "define([])",
         "define(function() { });",
         "define(['string'], function(string) { });",
         "define('id', ['string'], function(string) { });",

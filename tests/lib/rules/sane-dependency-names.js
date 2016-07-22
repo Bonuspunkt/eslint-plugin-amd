@@ -1,6 +1,6 @@
 /**
  * @fileoverview check to keep dependency name inline with variable name
- * @author 
+ * @author
  */
 "use strict";
 
@@ -53,5 +53,12 @@ ruleTester.run("sane-dependency-names", rule, {
                 type: "Identifier"
             }]
         },
+        {
+            code: "define(['a', 'b'], function(a, c) { });",
+            errors: [{
+                message: "'b' is mapped to c",
+                type: "Identifier"
+            }]
+        }
     ]
 });

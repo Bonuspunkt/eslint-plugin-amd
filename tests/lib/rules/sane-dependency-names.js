@@ -23,6 +23,7 @@ ruleTester.run("sane-dependency-names", rule, {
     valid: [
         "define([])",
         "define(function() { });",
+        "define([a], function(a) { });",
         "define(['string'], function(string) { });",
         "define('id', ['string'], function(string) { });",
 

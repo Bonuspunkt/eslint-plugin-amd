@@ -22,6 +22,7 @@ ruleTester.run("no-unused-dependencies", rule, {
 
     valid: [
         "define(function() { });",
+        "define([a], function(a) { });",
         "define(['a'], function(a) { console.log(a); });",
         "define('id', ['a'], function(a) { console.log(a); });",
         {

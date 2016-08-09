@@ -22,6 +22,7 @@ ruleTester.run("obsolete-dependencies", rule, {
 
     valid: [
         "define(function() {});",
+        "define([a], function(a) { });",
         "define(['a'], function() {});",
         "define('id', ['a'], function() {});",
         { code: "define(['A'], function() { });", options: [{ 'a': 'do not use' }, true] }

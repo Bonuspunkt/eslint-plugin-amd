@@ -30,6 +30,8 @@ ruleTester.run("sane-dependency-names", rule, {
         "define(['directory/file'], function(file) { });",
         "define(['a'], function(a, b) { });",
         "define(['a','b'], function(a) { });",
+
+        "define(['loader!file.ext'], function(file) { });"
     ],
 
     invalid: [

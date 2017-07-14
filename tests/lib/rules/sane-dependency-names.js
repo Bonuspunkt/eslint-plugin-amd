@@ -31,7 +31,16 @@ ruleTester.run("sane-dependency-names", rule, {
         "define(['a'], function(a, b) { });",
         "define(['a','b'], function(a) { });",
 
-        "define(['loader!file.ext'], function(file) { });"
+        "define(['dir/loader!'], function(loader) { });",
+        "define(['loader!file.ext'], function(file) { });",
+        {
+            code: "define(['a', 'b'], ({ method1, method2 }, b) => {});",
+            parserOptions: { ecmaVersion: 2015 }
+        },
+        {
+            code: "define(['a', 'b'], (a, { method1, method2 }) => {});",
+            parserOptions: { ecmaVersion: 2015 }
+        },
     ],
 
     invalid: [
@@ -62,6 +71,14 @@ ruleTester.run("sane-dependency-names", rule, {
                 message: "'b' is mapped to c",
                 type: "Identifier"
             }]
-        }
+        },
+        {
+            code: "define(['a', 'b', 'c'], function(a, { method1, method2 }, b) {});",
+            parserOptions: { ecmaVersion: 2015 },
+            errors: [{
+                message: "'c' is mapped to b",
+                type: "Identifier"
+            }]
+        },
     ]
 });

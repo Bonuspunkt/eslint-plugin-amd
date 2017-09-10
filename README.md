@@ -1,5 +1,7 @@
 # eslint-plugin-amd
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Bonuspunkt/eslint-plugin-amd.svg)](https://greenkeeper.io/)
+
 amd
 
 ## Installation
